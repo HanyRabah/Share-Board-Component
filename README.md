@@ -40,10 +40,10 @@ https://share-board.vercel.app/
 -   [x] Multiple component per page
 -   [x] Pure javascript, no library dependencies
 -   [x] Cross Browser support
--   [x] unit-tests
+-   [ ] unit-tests // has some issues with rollup 
 
 
-#Setup
+# Setup
 
 install dependencies:
 
