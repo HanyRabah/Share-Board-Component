@@ -1,11 +1,11 @@
 # Table of contents
 * [General info](#general-info)
+* [Demo](#demo)
 * [Technologies](#technologies)
 * [REquirements](#task-requirements)
 * [Setup](#setup)
 * [Library Usage](#library-usage)
 * [Library API](#library-api)
-* [Demo](#demo)
 
 
 # General Info 
@@ -18,7 +18,11 @@ input field. A Tag can be deleted when you click on the [x] icon.
 css is injected in the head when the library file run so no need to include any external css files.
 
 <b>Why rollup.js?</b> 
-As this is a small piece of code, so rollup.js is good when creating library as I will not use a lot of features in webpack
+As this is a small piece of code, so rollup.js is good when creating library as I will not use a lot of features in webpack.
+
+
+# Demo
+https://share-board.vercel.app/
 
 
 # Technologies
@@ -135,5 +139,3 @@ const tagInputClass = new EmailsInput(element: HTMLElement, options: object)
 tagInputClass.createTagElement('mail@domain.com');
 
 ```
-
-# Demo
