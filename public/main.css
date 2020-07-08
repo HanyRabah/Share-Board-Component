@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v17/mem8YaGs126MiZpBA-U1Ug.ttf) format('truetype');
+}
+.shareboard {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: white;
+  width: 100%;
+  max-width: 540px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  margin: 32px auto;
+  box-sizing: border-box;
+}
+.shareboard-custom {
+  height: auto;
+}
+.shareboard-body {
+  background-color: #F8F8F7;
+  padding: 32px 50px;
+}
+.shareboard-body__title {
+  font-size: 20px;
+  color: #050038;
+  margin: 0 0 24px;
+}
+.shareboard-footer {
+  display: flex;
+  padding: 24px 50px 32px;
+}
+.btn {
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: 0;
+  margin-right: 16px;
+  font-size: 14px;
+  line-height: 24px;
+  transition: background-color 0.3s ease-out;
+}
+.btn-primary {
+  background: #4262FF;
+  color: white;
+}
+.btn:hover {
+  background: #0630ff;
+}

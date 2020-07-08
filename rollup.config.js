@@ -6,7 +6,7 @@ import { version } from './package.json';
 export default {
   input: './src/index.js',
   output: {
-      file: './build/library.min.js',
+      file: './public/library.min.js',
       format: 'umd',
       banner: '/* EmailsInput version ' + version + ' */',
       name: 'EmailsInput',
@@ -19,6 +19,6 @@ export default {
       insert: true,
       output: false
     }),
-    //uglify()
+    uglify()
   ]
 }

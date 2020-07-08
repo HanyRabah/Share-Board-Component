@@ -1,14 +1,14 @@
 # Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [REquirements](#requirements)
+* [REquirements](#task-requirements)
 * [Setup](#setup)
 * [Library Usage](#library-usage)
 * [Library API](#library-api)
 * [Demo](#demo)
 
 
-#General Info 
+# General Info 
 
 Building a multi tag input library to be able to use it in different projects
 
@@ -21,7 +21,7 @@ css is injected in the head when the library file run so no need to include any 
 As this is a small piece of code, so rollup.js is good when creating library as I will not use a lot of features in webpack
 
 
-#Technologies
+# Technologies
  - ES6
  - Vanilla Javascript
  - babel
@@ -31,7 +31,7 @@ As this is a small piece of code, so rollup.js is good when creating library as 
  - npm
 
 
-#Requirements
+# Task Requirements
 
 -   [x] Multiple component per page
 -   [x] Pure javascript, no library dependencies
@@ -59,14 +59,8 @@ Run rollup watch to update the build when any change happen
 npm run dev
 ```
 
-Run test
 
-```sh
-npm run test
-```
-
-
-#Library Usage
+# Library Usage
 
 ```html
 <body>
@@ -101,7 +95,7 @@ passing options
 </body>
 ```
 
-#Library API
+# Library API
 
 ### EmailEditor
 
@@ -142,4 +136,4 @@ tagInputClass.createTagElement('mail@domain.com');
 
 ```
 
-#Demo
+# Demo
