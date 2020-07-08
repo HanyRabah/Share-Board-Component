@@ -2,7 +2,7 @@
 * [General info](#general-info)
 * [Demo](#demo)
 * [Technologies](#technologies)
-* [REquirements](#task-requirements)
+* [Task Requirements](#task-requirements)
 * [Setup](#setup)
 * [Library Usage](#library-usage)
 * [Library API](#library-api)
