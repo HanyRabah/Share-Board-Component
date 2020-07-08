@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Paul Lewis and Surma" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <title>Share Board</title>
+  <link href="main.css" rel="stylesheet" />
+</head>
+<body>
+  <h2 style="text-align: center">Share board</h2>
+  <div class="shareboard">
+    <section class="shareboard-body">
+      <p class="shareboard-body__title"> Share <strong>Board name</strong> with others </p>
+      <div id="emails-input"></div>
+    </section>
+    <section class="shareboard-footer">
+      <button id="fake-email" class="btn btn-primary">Add email</button>
+      <button id="email-count" class="btn btn-primary">Get emails count</button>
+    </section>
+  </div>
+  
+  <h2 style="text-align: center; margin-top: 32px">Share board with options example</h2>
+
+  <div class="shareboard shareboard-custom">
+    <section class="shareboard-body">
+      <p class="shareboard-body__title"> Share <strong>Board name</strong> with others </p>
+      <div id="tag-emails"></div>
+    </section>
+  </div>
+
+  <script src='../build/library.min.js'></script>
+
+  <script>
+    var tagInputEl = document.getElementById('emails-input');
+    const tagInputClass =  new EmailsInput(tagInputEl);
+    
+    const emailCountButton = document.getElementById('email-count');
+    emailCountButton.addEventListener('click', () => {
+      alert(`Total emails count: ${tagInputClass.emailCount}`);
+    })
+    
+    const fakeEmailButton = document.getElementById('fake-email');
+    fakeEmailButton.addEventListener('click', () => {
+      var chars = 'abcdefghijklmnopqrstuvwxyz1234567890';
+      tagInputClass.createTagElement(chars[Math.floor(Math.random() * chars.length)] + '@mail.com')
+    })
+
+    var tagEmailsEl = document.getElementById('tag-emails');
+     new EmailsInput(tagEmailsEl, { 
+      placeholder: 'emails to share', 
+      data: ['email@gmail.com']
+    });
+
+  </script>
+</body>
+</html>

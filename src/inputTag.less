@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+
+.tag {
+  &-wrapper{
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: white;
+    border: 1px solid #C3C2CF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 100%;
+    height: 80px;
+    padding: 8px;
+    overflow-y: scroll; 
+  }
+  &-input {
+    background: transparent;
+    border: 0;
+    font-size: 14px;
+    line-height: 24px;
+    width: auto;
+    padding: 0  0 0 8px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &-item {
+    background: rgba(102, 153, 255, 0.2);
+    border-radius: 50px;
+    padding: 0 0 0 8px;
+    margin: 0 4px 4px 0;
+    display: inline-flex;
+    &__invalid {
+      background-color: transparent;
+      animation: none;
+    }
+    &__label   {
+      font-size: 14px;
+      line-height: 24px;
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      .tag-item__invalid &  {
+        border-bottom: 1px dashed #e65959;
+      }
+    }
+    &__close-button   {
+      background: transparent;
+      border: 0;
+      padding-right: 8px;
+      font-size: 10px;
+      line-height: 23px;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+// Fix placeholder for some broswers 
+.placeholder(@color) {
+	&:-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: @textColorPlaceholder;
+	}
+	&::-webkit-input-placeholder {
+		/* Edge */
+		color: @textColorPlaceholder;
+	}
+	&::placeholder {
+		color: @textColorPlaceholder;
+	}
+}
