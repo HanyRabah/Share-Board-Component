@@ -1,5 +1,5 @@
 import { createElement, createTagElement } from "../src/index";
-// TODO: fix export issue from library fro createElement
+// TODO: fix export issue from library for createElement
 
 describe(".createElement", () => {
   it("should create an element with attribtues", () => {

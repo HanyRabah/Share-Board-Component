@@ -147,7 +147,7 @@ export default class TagInput {
     if (!this.validate(currentTarget.value)) {
       this.inputElement.value = "";
       // TODO: tell the user what happend by adding it to the UI
-      throw "item already exist or length less than 3 characters";
+      console.log("email already exist or length less than 3 characters");
     }
 
     this.createTagElement(this.inputElement.value);
@@ -161,7 +161,6 @@ export default class TagInput {
     this.createTagElement(this.inputElement.value);
   };
 
-  // @TODO: fix this naming
   handleInputInput = () => {
     const value = this.inputElement.value.split(",");
 
