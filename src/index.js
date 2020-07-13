@@ -1,4 +1,4 @@
-import './inputTag.less';
+import "./inputTag.less";
 
 /**
  * @const EMAIL_REG
@@ -27,7 +27,7 @@ function isValid(value) {
  * @param {Object} attributes
  * @returns {HTMLElement}
  */
- function createElement(tag, attributes) {
+function createElement(tag, attributes) {
   const element = document.createElement(tag);
 
   for (let key in attributes) {
@@ -49,7 +49,7 @@ function isValid(value) {
  */
 function createTagElement(value) {
   const el = createElement("span", { className: "tag-item" });
-  if (!isValid(value)) {
+  if (!isValid(value.trim())) {
     el.classList.add("tag-item__invalid");
   }
 
@@ -79,32 +79,30 @@ function createTagElement(value) {
  */
 export default class TagInput {
   constructor(element, options = { placeholder: "add more people..." }) {
-    if (typeof window === 'undefined') {
-			throw new TypeError(
-				'This plugin is only works in browser',
-			);
+    if (typeof window === "undefined") {
+      throw new TypeError("This plugin is only works in browser");
     }
-    
+
     this.element = element;
     this.options = options;
     this.data = this.options.data || [];
 
     if (!(element instanceof HTMLElement)) {
-			throw new TypeError(`HTMLElement expected, ${element} given`);
-		}
-    
+      throw new TypeError(`HTMLElement expected, ${element} given`);
+    }
+
     this.inputElement = createElement("input", {
       className: "tag-input",
       placeholder: options.placeholder,
     });
 
-    this.element.className = "tag-wrapper"
+    this.element.className = "tag-wrapper";
     this.element.append(this.inputElement);
-    
+
     this.addEventListeners();
 
-    if(this.data.length > 0){
-      this.data.forEach(element => {
+    if (this.data.length > 0) {
+      this.data.forEach((element) => {
         this.createTagElement(element);
       });
     }
@@ -134,10 +132,9 @@ export default class TagInput {
 
     const tag = target.closest(".tag-item");
     this.data = this.data.filter((i) => {
-      return i !== tag.firstChild.textContent
-
+      return i !== tag.firstChild.textContent;
     });
-    
+
     tag.remove();
   }
 
@@ -147,10 +144,10 @@ export default class TagInput {
       return null;
     }
     // if enter key pressed then check if input is valid if not clear the field
-    if(!this.validate(currentTarget.value)) {
+    if (!this.validate(currentTarget.value)) {
       this.inputElement.value = "";
       // TODO: tell the user what happend by adding it to the UI
-      throw 'item already exist or length less than 3 characters';
+      throw "item already exist or length less than 3 characters";
     }
 
     this.createTagElement(this.inputElement.value);
@@ -166,18 +163,19 @@ export default class TagInput {
 
   // @TODO: fix this naming
   handleInputInput = () => {
-    const value = this.inputElement.value.split(",")
+    const value = this.inputElement.value.split(",");
 
     if (value.length > 1) {
-      value.filter(item => item != '')
-      .forEach((tag) => {
-        this.validate(tag)
-        this.createTagElement(tag);
-      })
+      value
+        .filter((item) => item != "")
+        .forEach((tag) => {
+          this.validate(tag);
+          this.createTagElement(tag);
+        });
     }
   };
 
-  createTagElement( value ) {
+  createTagElement(value) {
     const tagEl = createTagElement(value);
 
     this.data.push(value);
@@ -186,7 +184,7 @@ export default class TagInput {
     this.inputElement.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  validate( value ) {
+  validate(value) {
     const hasValidLength = value.length >= 3;
     const isExists = this.data.some((i) => i === value);
 

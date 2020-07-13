@@ -1,4 +1,4 @@
-import { createElement, createTagElement } from '../src/index';
+import { createElement, createTagElement } from "../src/index";
 // TODO: fix export issue from library fro createElement
 
 describe(".createElement", () => {
